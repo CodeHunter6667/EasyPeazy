@@ -18,4 +18,18 @@
     <PackageReference Include="AutoMapper" Version="13.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Domain\" />
+    <None Remove="Services\" />
+    <None Remove="Data\" />
+    <None Remove="Domain\Enums\" />
+    <None Remove="Data\Mapping\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Domain\" />
+    <Folder Include="Services\" />
+    <Folder Include="Data\" />
+    <Folder Include="Domain\Enums\" />
+    <Folder Include="Data\Mapping\" />
+  </ItemGroup>
 </Project>
