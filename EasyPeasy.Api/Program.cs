@@ -1,6 +1,13 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using EasyPeasy.Api.Data;
+using Microsoft.EntityFrameworkCore;
 
-// Add services to the container.
+var builder = WebApplication.CreateBuilder(args);
+
+var connectionString = builder.Configuration.GetConnectionString("SqlConnection");
+
+builder.Services.AddDbContext<AppDbContext>(
+        options => options.UseNpgsql(connectionString)
+    );
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -23,4 +30,3 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-
