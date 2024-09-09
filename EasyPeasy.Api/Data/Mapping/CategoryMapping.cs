@@ -1,7 +1,5 @@
-﻿using System;
-using EasyPeasy.Api.Domain;
+﻿using EasyPeasy.Api.Domain;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace EasyPeasy.Api.Data.Mapping;
