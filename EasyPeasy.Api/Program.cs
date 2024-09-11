@@ -1,4 +1,6 @@
 ﻿using EasyPeasy.Api.Data;
+using EasyPeasy.Api.Services;
+using EasyPeasy.Api.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +11,7 @@ builder.Services.AddDbContext<AppDbContext>(
         options => options.UseNpgsql(connectionString)
     );
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

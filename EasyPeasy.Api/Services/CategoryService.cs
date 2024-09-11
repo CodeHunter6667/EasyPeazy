@@ -4,12 +4,13 @@ using AutoMapper;
 using EasyPeasy.Api.Data;
 using EasyPeasy.Api.Domain;
 using EasyPeasy.Api.Domain.Dtos;
+using EasyPeasy.Api.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace EasyPeasy.Api.Services;
 
-public class CategoryService
+public class CategoryService : ICategoryService
 {
     private readonly AppDbContext _context;
     private readonly IMapper _mapper;

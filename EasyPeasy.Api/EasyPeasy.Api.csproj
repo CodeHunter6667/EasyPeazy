@@ -30,7 +30,6 @@
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Domain\" />
-    <Folder Include="Services\" />
     <Folder Include="Data\" />
     <Folder Include="Domain\Enums\" />
     <Folder Include="Data\Mapping\" />
