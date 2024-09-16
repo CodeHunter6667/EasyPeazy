@@ -30,9 +30,10 @@ public class CategoryService : ICategoryService
         return categoriesDto;
     }
 
-    public async Task<CategoryDTO> GetById(long id)
+    public async Task<CategoryDTO?> GetById(long id)
     {
         var category = await _context.Categories.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
+        if (category == null) return null;
 
         var categoryDto = _mapper.Map<CategoryDTO>(category);
 
@@ -53,9 +54,9 @@ public class CategoryService : ICategoryService
         return categoryDto;
     }
 
-    public async Task<CategoryDTO> Put(long id, CategoryDTO dto)
+    public async Task<CategoryDTO?> Put(CategoryDTO dto)
     {
-        var category = await _context.Categories.FirstOrDefaultAsync(x => x.Id == id);
+        var category = new Category();
 
         category = _mapper.Map<Category>(dto);
 
@@ -67,19 +68,18 @@ public class CategoryService : ICategoryService
         return categoryDto;
     }
 
-    public async Task<CategoryDTO> Delete(long id)
+    public async Task<CategoryDTO?> Delete(CategoryDTO dto)
     {
-        var category = await _context.Categories.FirstOrDefaultAsync(x => x.Id == id);
-        if (category != null)
-        {
-            var deletedCategoryDto = _mapper.Map<CategoryDTO>(category);
+        var category = new Category();
+        
+        category = _mapper.Map<Category>(dto);
+        
+        _context.Categories.Remove(category);
+        await _context.SaveChangesAsync();   
             
-            _context.Categories.Remove(category);
-            await _context.SaveChangesAsync();   
-            
-            return deletedCategoryDto;
-        }
+        var deletedCategoryDto = _mapper.Map<CategoryDTO>(category);
+        
+        return deletedCategoryDto;
 
-        return null;
     }
 }
