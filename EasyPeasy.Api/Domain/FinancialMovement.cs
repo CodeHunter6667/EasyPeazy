@@ -11,5 +11,5 @@ public class FinancialMovement : EntityBase
     public EMovementType Type { get; set; } = EMovementType.EXPENSE;
     public Category Category { get; set; } = null!;
     public long CategotyId { get; set; }
-    public string UserId { get; set; }
+    public string UserId { get; set; } = string.Empty;
 }
