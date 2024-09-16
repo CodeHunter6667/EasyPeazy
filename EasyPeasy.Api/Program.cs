@@ -12,6 +12,7 @@ builder.Services.AddDbContext<AppDbContext>(
     );
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<IFinancialMovementService, FinancialMovementService>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
