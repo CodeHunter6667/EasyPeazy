@@ -36,6 +36,7 @@ public class CategoryController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CategoryDTO dto)
     {
+        if(dto == null) return BadRequest();
         var category = await _categoryService.Post(dto);
         
         return new CreatedAtRouteResult("GetCategory", new { id = category.Id }, category);
@@ -44,6 +45,7 @@ public class CategoryController : ControllerBase
     [HttpPut("/{id:long}")]
     public async Task<IActionResult> Update([FromRoute] long id, [FromBody] CategoryDTO dto)
     {
+        if (id != dto.Id && dto == null) return BadRequest();
         var category = await _categoryService.GetById(id);
         if(category == null) return NotFound();
         
