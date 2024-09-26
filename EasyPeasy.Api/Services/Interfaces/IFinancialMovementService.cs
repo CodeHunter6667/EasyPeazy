@@ -1,4 +1,4 @@
-using EasyPeasy.Api.Domain.Dtos;
+using EasyPeasy.Api.Domain.Dtos.FinancialMovement;
 
 namespace EasyPeasy.Api.Services.Interfaces;
 

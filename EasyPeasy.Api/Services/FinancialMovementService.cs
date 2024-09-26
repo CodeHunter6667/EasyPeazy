@@ -1,7 +1,7 @@
 using AutoMapper;
 using EasyPeasy.Api.Data;
 using EasyPeasy.Api.Domain;
-using EasyPeasy.Api.Domain.Dtos;
+using EasyPeasy.Api.Domain.Dtos.FinancialMovement;
 using EasyPeasy.Api.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
