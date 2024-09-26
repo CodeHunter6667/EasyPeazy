@@ -1,5 +1,6 @@
 using EasyPeasy.Api.Domain;
 using EasyPeasy.Api.Domain.Dtos;
+using EasyPeasy.Api.Domain.Dtos.FinancialMovement;
 using EasyPeasy.Api.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
