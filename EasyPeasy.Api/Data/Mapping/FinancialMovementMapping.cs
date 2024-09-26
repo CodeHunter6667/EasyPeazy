@@ -17,7 +17,7 @@ public class FinancialMovementMapping : IEntityTypeConfiguration<FinancialMoveme
 
         builder.Property(x => x.Title)
             .IsRequired()
-            .HasColumnType("TEXT")
+            .HasColumnType("VARCHAR")
             .HasMaxLength(80);
 
         builder.Property(x => x.Amount)
