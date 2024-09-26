@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 using AutoMapper;
 using EasyPeasy.Api.Data;
 using EasyPeasy.Api.Domain;
-using EasyPeasy.Api.Domain.Dtos.Category;
+using EasyPeasy.Api.Domain.Dtos;
 using EasyPeasy.Api.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
