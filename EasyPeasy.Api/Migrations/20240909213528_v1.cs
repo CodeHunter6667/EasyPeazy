@@ -18,7 +18,7 @@ namespace EasyPeasy.Api.Migrations
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Title = table.Column<string>(type: "TEXT", maxLength: 80, nullable: false),
+                    Title = table.Column<string>(type: "VARCHAR", maxLength: 80, nullable: false),
                     Description = table.Column<string>(type: "TEXT", maxLength: 255, nullable: false),
                     UserId = table.Column<string>(type: "VARCHAR", maxLength: 160, nullable: false)
                 },
@@ -33,7 +33,7 @@ namespace EasyPeasy.Api.Migrations
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Title = table.Column<string>(type: "TEXT", maxLength: 80, nullable: false),
+                    Title = table.Column<string>(type: "VARCHAR", maxLength: 80, nullable: false),
                     Amount = table.Column<decimal>(type: "numeric(12,6)", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "TIMESTAMP", nullable: false),
                     Type = table.Column<short>(type: "SMALLINT", nullable: false),

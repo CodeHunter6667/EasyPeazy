@@ -38,7 +38,7 @@ namespace EasyPeasy.Api.Migrations
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(80)
-                        .HasColumnType("TEXT");
+                        .HasColumnType("VARCHAR");
 
                     b.Property<string>("UserId")
                         .IsRequired()
@@ -73,7 +73,7 @@ namespace EasyPeasy.Api.Migrations
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(80)
-                        .HasColumnType("TEXT");
+                        .HasColumnType("VARCHAR");
 
                     b.Property<short>("Type")
                         .HasColumnType("SMALLINT");
