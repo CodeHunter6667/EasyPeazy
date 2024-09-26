@@ -1,5 +1,7 @@
 ﻿using System;
 using AutoMapper;
+using EasyPeasy.Api.Domain.Dtos.Category;
+using EasyPeasy.Api.Domain.Dtos.FinancialMovement;
 
 namespace EasyPeasy.Api.Domain.Dtos.Mappings
 {
@@ -7,8 +9,8 @@ namespace EasyPeasy.Api.Domain.Dtos.Mappings
     {
         public MappingProfile()
         {
-            CreateMap<CategoryDTO, Category>().ReverseMap();
-            CreateMap<FinancialMovementDTO, FinancialMovement>().ReverseMap();
+            CreateMap<CategoryDTO, Domain.Category>().ReverseMap();
+            CreateMap<FinancialMovementDTO, Domain.FinancialMovement>().ReverseMap();
         }
     }
 }

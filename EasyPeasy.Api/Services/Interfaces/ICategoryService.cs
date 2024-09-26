@@ -1,5 +1,4 @@
-using EasyPeasy.Api.Domain;
-using EasyPeasy.Api.Domain.Dtos;
+using EasyPeasy.Api.Domain.Dtos.Category;
 
 namespace EasyPeasy.Api.Services.Interfaces;
 
