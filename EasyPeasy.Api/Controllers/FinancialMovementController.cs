@@ -25,7 +25,7 @@ public class FinancialMovementController : ControllerBase
         return Ok(movements);
     }
     
-    [HttpGet("/{id:long}", Name = "NewFinancialMovement")]
+    [HttpGet("{id:long}", Name = "NewFinancialMovement")]
     public async Task<ActionResult<FinancialMovementDTO>> GetById(int id)
     {
         var movement = await _service.GetById(id);
@@ -34,7 +34,7 @@ public class FinancialMovementController : ControllerBase
         return Ok(movement);
     }
 
-    [HttpGet("/category/{id:long}")]
+    [HttpGet("category/{id:long}")]
     public async Task<ActionResult<FinancialMovementDTO>> GetMovementsByCategory([FromRoute] long categoryId)
     {
         var movements = await _service.GetByCategory(categoryId);
@@ -52,7 +52,7 @@ public class FinancialMovementController : ControllerBase
         return new CreatedAtRouteResult("NewFinancialMovement", new { id = movement.Id }, movement);
     }
 
-    [HttpPut("/{id:long}")]
+    [HttpPut("{id:long}")]
     public async Task<IActionResult> Update([FromRoute] long id, [FromBody] FinancialMovementDTO dto)
     {
         if (dto == null) return BadRequest();
@@ -64,7 +64,7 @@ public class FinancialMovementController : ControllerBase
         return Ok(movement);
     }
 
-    [HttpDelete("/{id:long}")]
+    [HttpDelete("{id:long}")]
     public async Task<IActionResult> Delete([FromRoute] long id)
     {
         var movement = await _service.GetById(id);
