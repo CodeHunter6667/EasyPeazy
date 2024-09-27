@@ -9,6 +9,7 @@
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.7.3" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.8">
@@ -28,7 +29,6 @@
     <None Remove="Domain\Dtos\Mappings\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Domain\" />
     <Folder Include="Data\" />
     <Folder Include="Domain\Enums\" />
     <Folder Include="Data\Mapping\" />
