@@ -55,7 +55,8 @@ public class FinancialMovementService : IFinancialMovementService
     public async Task<FinancialMovementDTO> Post(FinancialMovementDTO dto)
     {
         var movement = _mapper.Map<FinancialMovement>(dto);
-        
+        movement.CreatedAt = DateTime.Now;
+
         _context.FinancialMovements.Add(movement);
         await _context.SaveChangesAsync();
         var movementDto = _mapper.Map<FinancialMovementDTO>(movement);
